@@ -1,0 +1,18 @@
+name: Publish release drafts
+description: A GitHub action to publish release drafts on GitHub
+author: alexesprit
+inputs:
+  # Required
+  tag-name:
+    description: Tag name
+    requried: true
+
+  github-token:
+    description: GitHub token
+    requried: true
+runs:
+  using: node12
+  main: dist/index.js
+branding:
+  icon: tag
+  color: gray-dark
