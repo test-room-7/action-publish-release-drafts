@@ -66,6 +66,6 @@ Don't push dist files; they're updated automatically.
 Licensed under the [MIT License](./LICENSE.md).
 
 [version-badge]: https://img.shields.io/github/v/release/test-room-7/action-publish-release-drafts
-[version-url]: https://github.com/marketplace/actions/action-publish-release-drafts
+[version-url]: https://github.com/marketplace/actions/publish-release-drafts
 [workflow-badge]: https://img.shields.io/github/workflow/status/test-room-7/action-publish-release-drafts/Lint?label=lint
 [workflow-url]: https://github.com/test-room-7/action-publish-release-drafts/actions
