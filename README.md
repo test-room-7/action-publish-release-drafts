@@ -29,7 +29,7 @@ jobs:
               uses: test-room-7/action-publish-release-drafts@v1
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
-				  tag-name: ${{ steps.version.outputs.VERSION }}
+                  tag-name: ${{ steps.version.outputs.VERSION }}
 ```
 
 ### Example of basic usage
