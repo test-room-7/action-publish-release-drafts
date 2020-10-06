@@ -26,7 +26,7 @@ jobs:
               id: get-version
               run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
             - name: Publish release on GitHub
-              uses: test-room-7/action-publish-release-drafts@v1
+              uses: test-room-7/action-publish-release-drafts@v0
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   tag-name: ${{ steps.get-version.outputs.VERSION }}
