@@ -2,7 +2,7 @@
 
 A GitHub action to publish release drafts on GitHub.
 
-This task searches for a release draft with a given tag name. If the draft is found, the task attaches the tag (if it exists) to this release, then publishes the release.
+This task searches for a release draft with a given target tag. If the draft is found, the task publishes the release.
 
 ## Usage
 
@@ -34,10 +34,10 @@ jobs:
 
 ### Example of basic usage
 
-1. Create a new draft reserved for a new version, and name it in a semver format, e.g. `v0.1.0`.
+1. Create a new draft reserved for a new version, and give it the appropriate tag target (e.g. `v0.1.0`).
 2. Update a description of the draft during development, if neccessary.
-3. When a new version is ready, push the tag to repository (`v0.1.0` in this case).
-4. The action will be executed, and it will apply the `v0.1.0` tag to the draft, and will publish it.
+3. When a new version is ready, push the matching tag to repository (`v0.1.0` in this case).
+4. The action will be executed, and the draft will be published.
 
 ### Inputs
 
