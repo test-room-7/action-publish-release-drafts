@@ -4,6 +4,9 @@ A GitHub action to publish release drafts on GitHub.
 
 This task searches for a release draft with a given target tag. If the draft is found, the task publishes the release.
 
+> **Note**
+> This is a fork of [test-room-7/action-publish-release-drafts](https://github.com/test-room-7/action-publish-release-drafts), modified to match draft releases by tag name rather than by release title.
+
 ## Usage
 
 The action requires GitHub token for authentication.
@@ -26,7 +29,7 @@ jobs:
               id: get-version
               run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
             - name: Publish release on GitHub
-              uses: test-room-7/action-publish-release-drafts@v0
+              uses: eritbh/action-publish-release-drafts@v0
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   tag-name: ${{ steps.get-version.outputs.VERSION }}
@@ -65,7 +68,7 @@ Don't push dist files; they're updated automatically.
 
 Licensed under the [MIT License](./LICENSE.md).
 
-[version-badge]: https://img.shields.io/github/v/release/test-room-7/action-publish-release-drafts
+[version-badge]: https://img.shields.io/github/v/release/eritbh/action-publish-release-drafts
 [version-url]: https://github.com/marketplace/actions/publish-release-drafts
-[workflow-badge]: https://img.shields.io/github/workflow/status/test-room-7/action-publish-release-drafts/Lint?label=lint
-[workflow-url]: https://github.com/test-room-7/action-publish-release-drafts/actions
+[workflow-badge]: https://img.shields.io/github/workflow/status/eritbh/action-publish-release-drafts/Lint?label=lint
+[workflow-url]: https://github.com/eritbh/action-publish-release-drafts/actions
