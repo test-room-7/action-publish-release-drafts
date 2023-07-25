@@ -11,7 +11,7 @@ inputs:
     description: GitHub token
     requried: true
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
 branding:
   icon: tag

@@ -45,6 +45,10 @@ export async function publishRelease(tag: string): Promise<void> {
 async function getReleaseByName(tag: string): Promise<ReleaseData> {
 	const { owner, repo } = context.repo;
 
+	// `octokit.repos.getReleaseByTag` does not search draft releases, but we
+	// can still find the target draft by listing all releases and looking for
+	// the one where the tag matches
+
 	const response = await octokit.repos.listReleases({ owner, repo });
 	if (!response) {
 		throw new Error(`${owner}/${repo} has no releases`);
@@ -52,8 +56,7 @@ async function getReleaseByName(tag: string): Promise<ReleaseData> {
 
 	const releases = response.data;
 	for (const release of releases) {
-		// Drafts have no `tag` property
-		if (release.name === tag) {
+		if (release.tag_name === tag) {
 			return { id: release.id, isDraft: release.draft };
 		}
 	}
